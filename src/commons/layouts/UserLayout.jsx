@@ -78,7 +78,7 @@ const UserLayout = ({ children }) => {
 
 UserLayout.propTypes = {
   children: PropTypes.element,
-  toggleNavVisibility: PropTypes.bool
+  toggleNavVisibility: PropTypes.bool,
 }
 
 export default UserLayout

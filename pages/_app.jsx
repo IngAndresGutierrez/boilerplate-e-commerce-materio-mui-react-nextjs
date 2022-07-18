@@ -32,7 +32,7 @@ const persistor = persistStore(store)
 const initialSettings = {
   themeColor: 'primary',
   mode: themeConfig.mode,
-  contentWidth: themeConfig.contentWidth
+  contentWidth: themeConfig.contentWidth,
 }
 
 const clientSideEmotionCache = createEmotionCache()
@@ -50,7 +50,11 @@ if (themeConfig.routingLoader) {
   })
 }
 
-const MyApp = ({ Component, emotionCache = clientSideEmotionCache, pageProps }) => {
+const MyApp = ({
+  Component,
+  emotionCache = clientSideEmotionCache,
+  pageProps,
+}) => {
   return (
     <CacheProvider value={emotionCache}>
       <Provider store={store}>
@@ -65,9 +69,9 @@ const MyApp = ({ Component, emotionCache = clientSideEmotionCache, pageProps }) 
 }
 
 MyApp.propTypes = {
-  Component: PropTypes.element,
+  Component: PropTypes.any,
   emotionCache: PropTypes.object,
-  pageProps: PropTypes.object
+  pageProps: PropTypes.object,
 }
 
 export default MyApp

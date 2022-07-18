@@ -1,8 +1,7 @@
 /* import external modules */
-import { Grid } from '@mui/material'
 
 /* import internal modules */
-import ProductCard from '../../../../commons/components/ProductCard'
+import ProductsList from '../../../../commons/components/products/ProductsList'
 
 /** @description This is a functional home layout component
  *  @version 1.0.0
@@ -15,11 +14,7 @@ import ProductCard from '../../../../commons/components/ProductCard'
  **/
 
 const HomeLayout = () => {
-  return (
-    <Grid item xs={12} sm={6}>
-      <ProductCard />
-    </Grid>
-  )
+  return <ProductsList products={[1, 2, 3, 4, 5]} />
 }
 
 export default HomeLayout

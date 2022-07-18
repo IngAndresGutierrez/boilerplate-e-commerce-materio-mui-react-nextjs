@@ -12,9 +12,7 @@ import HomeLayout from '../../templates/HomeLayout'
  **/
 
 const Home = () => {
-  return (
-    <HomeLayout />
-  )
+  return <HomeLayout />
 }
 
 export default Home

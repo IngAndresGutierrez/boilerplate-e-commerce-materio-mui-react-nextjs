@@ -39,11 +39,11 @@ const StyledGrid = styled(Grid)(({ theme }) => ({
   alignItems: 'center',
   justifyContent: 'center',
   [theme.breakpoints.down('md')]: {
-    borderBottom: `1px solid ${theme.palette.divider}`
+    borderBottom: `1px solid ${theme.palette.divider}`,
   },
   [theme.breakpoints.up('md')]: {
-    borderRight: `1px solid ${theme.palette.divider}`
-  }
+    borderRight: `1px solid ${theme.palette.divider}`,
+  },
 }))
 
 const ProductCard = () => {
@@ -67,7 +67,7 @@ const ProductCard = () => {
             sx={{
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'center'
+              justifyContent: 'center',
             }}
           >
             <Image
@@ -87,8 +87,8 @@ const ProductCard = () => {
             paddingLeft: [
               '1.5rem !important',
               '1.5rem !important',
-              '0 !important'
-            ]
+              '0 !important',
+            ],
           }}
         >
           <CardContent>
@@ -111,7 +111,7 @@ const ProductCard = () => {
               sx={{
                 display: 'flex',
                 justifyContent: 'space-between',
-                width: '100%'
+                width: '100%',
               }}
             >
               <Button>
@@ -134,7 +134,7 @@ const ProductCard = () => {
                 anchorEl={anchorEl}
                 onClose={handleClose}
                 MenuListProps={{
-                  'aria-labelledby': 'long-button'
+                  'aria-labelledby': 'long-button',
                 }}
               >
                 <MenuItem onClick={handleClose}>

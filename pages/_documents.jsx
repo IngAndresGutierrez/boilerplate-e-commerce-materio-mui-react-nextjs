@@ -12,7 +12,7 @@ import createEmotionServer from '@emotion/server/create-instance'
 import { createEmotionCache } from 'src/@core/utils/create-emotion-cache'
 
 class CustomDocument extends Document {
-  render () {
+  render() {
     return (
       <Html lang="en">
         <Head>
@@ -49,7 +49,7 @@ CustomDocument.getInitialProps = async (ctx) => {
             {...props} // @ts-ignore
             emotionCache={cache}
           />
-        )
+        ),
     })
   const initialProps = await Document.getInitialProps(ctx)
   const emotionStyles = extractCriticalToChunks(initialProps.html)
@@ -66,7 +66,7 @@ CustomDocument.getInitialProps = async (ctx) => {
 
   return {
     ...initialProps,
-    styles: [...Children.toArray(initialProps.styles), ...emotionStyleTags]
+    styles: [...Children.toArray(initialProps.styles), ...emotionStyleTags],
   }
 }
 

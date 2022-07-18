@@ -1,5 +1,5 @@
 const initialState = {
-  appConfig: null
+  appConfig: null,
 }
 
 export default initialState

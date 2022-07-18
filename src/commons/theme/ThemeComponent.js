@@ -7,7 +7,7 @@ import GlobalStyles from '@mui/material/GlobalStyles'
 import {
   ThemeProvider,
   createTheme,
-  responsiveFontSizes
+  responsiveFontSizes,
 } from '@mui/material/styles'
 
 // ** Theme Config
@@ -33,7 +33,7 @@ const ThemeComponent = ({ settings, children }) => {
   // ** Continue theme creation and pass merged component overrides to CreateTheme function
   theme = createTheme(theme, {
     components: { ...overrides(theme) },
-    typography: { ...typography(theme) }
+    typography: { ...typography(theme) },
   })
 
   // ** Set responsive font sizes to true
@@ -52,7 +52,7 @@ const ThemeComponent = ({ settings, children }) => {
 
 ThemeComponent.propTypes = {
   settings: PropTypes.object,
-  children: PropTypes.element
+  children: PropTypes.element,
 }
 
 export default ThemeComponent

@@ -7,7 +7,7 @@ describe('Home', () => {
     render(<Home />)
 
     const heading = screen.getByRole('img', {
-      name: /Apple iPhone 11 Pro/i
+      name: /Apple iPhone 11 Pro/i,
     })
 
     expect(heading).toBeInTheDocument()

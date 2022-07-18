@@ -20,7 +20,7 @@ const persistConfig = {
   key: 'root',
   version: 1,
   storage,
-  whitelist: []
+  whitelist: [],
 }
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
@@ -29,6 +29,6 @@ export const store = configureStore({
   reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
-      serializableCheck: false
-    })
+      serializableCheck: false,
+    }),
 })
