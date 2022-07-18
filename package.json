@@ -10,6 +10,7 @@
     "test": "jest --watch",
     "test:ci": "jest --ci",
     "eslint": "eslint . --fix",
+    "prettier": "prettier . --write",
     "docs": "jsdoc -c jsdoc.conf.json",
     "prepare": "husky install"
   },
