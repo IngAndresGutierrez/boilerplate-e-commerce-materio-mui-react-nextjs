@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: commons/components/ProductCard/index.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: commons/components/ProductCard/index.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/* import external modules */
+import Image from 'next/image'
+import { useState } from 'react'
+
+// ** MUI Imports
+import Box from '@mui/material/Box'
+import Grid from '@mui/material/Grid'
+import Card from '@mui/material/Card'
+import Menu from '@mui/material/Menu'
+import Button from '@mui/material/Button'
+import MenuItem from '@mui/material/MenuItem'
+import { styled } from '@mui/material/styles'
+import Typography from '@mui/material/Typography'
+import IconButton from '@mui/material/IconButton'
+import CardContent from '@mui/material/CardContent'
+import CardActions from '@mui/material/CardActions'
+
+// ** Icons Imports
+import Twitter from 'mdi-material-ui/Twitter'
+import CartPlus from 'mdi-material-ui/CartPlus'
+import Facebook from 'mdi-material-ui/Facebook'
+import Linkedin from 'mdi-material-ui/Linkedin'
+import GooglePlus from 'mdi-material-ui/GooglePlus'
+import ShareVariant from 'mdi-material-ui/ShareVariant'
+
+/** @description This is a functional product card component
+ *  @version 1.0.0
+ *  @since 15/07/2022
+ *  @author Jaime Andrés Gómez Gutiérrez &lt;g.gutierrez.j.andres@gmail.com>
+ *
+ *  @function
+ *  @name ProductCard
+ *  @returns {Component} Returns the product card component
+ **/
+
+// Styled Grid component
+const StyledGrid = styled(Grid)(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  [theme.breakpoints.down('md')]: {
+    borderBottom: `1px solid ${theme.palette.divider}`
+  },
+  [theme.breakpoints.up('md')]: {
+    borderRight: `1px solid ${theme.palette.divider}`
+  }
+}))
+
+const ProductCard = () => {
+  // ** State
+  const [anchorEl, setAnchorEl] = useState(null)
+  const open = Boolean(anchorEl)
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget)
+  }
+
+  const handleClose = () => {
+    setAnchorEl(null)
+  }
+
+  return (
+    &lt;Card>
+      &lt;Grid container spacing={6}>
+        &lt;StyledGrid item md={5} xs={12}>
+          &lt;CardContent
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center'
+            }}
+          >
+            &lt;Image
+              width={137}
+              height={176}
+              alt="Apple iPhone 11 Pro"
+              src="/assets/images/products/iPhone-11-pro.png"
+            />
+          &lt;/CardContent>
+        &lt;/StyledGrid>
+        &lt;Grid
+          item
+          xs={12}
+          md={7}
+          sx={{
+            paddingTop: ['0 !important', '0 !important', '1.5rem !important'],
+            paddingLeft: [
+              '1.5rem !important',
+              '1.5rem !important',
+              '0 !important'
+            ]
+          }}
+        >
+          &lt;CardContent>
+            &lt;Typography variant="h6" sx={{ marginBottom: 2 }}>
+              Apple iPhone 11 Pro
+            &lt;/Typography>
+            &lt;Typography variant="body2" sx={{ marginBottom: 3.5 }}>
+              Apple iPhone 11 Pro smartphone. Announced Sep 2019. Features 5.8″
+              display Apple A13 Bionic
+            &lt;/Typography>
+            &lt;Typography sx={{ fontWeight: 500, marginBottom: 3 }}>
+              Price:{' '}
+              &lt;Box component="span" sx={{ fontWeight: 'bold' }}>
+                $899
+              &lt;/Box>
+            &lt;/Typography>
+          &lt;/CardContent>
+          &lt;CardActions className="card-action-dense">
+            &lt;Box
+              sx={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                width: '100%'
+              }}
+            >
+              &lt;Button>
+                &lt;CartPlus fontSize="small" sx={{ marginRight: 2 }} />
+                Add to Card
+              &lt;/Button>
+              &lt;IconButton
+                id="long-button"
+                aria-label="share"
+                aria-haspopup="true"
+                onClick={handleClick}
+                aria-controls="long-menu"
+                aria-expanded={open ? 'true' : undefined}
+              >
+                &lt;ShareVariant fontSize="small" />
+              &lt;/IconButton>
+              &lt;Menu
+                open={open}
+                id="long-menu"
+                anchorEl={anchorEl}
+                onClose={handleClose}
+                MenuListProps={{
+                  'aria-labelledby': 'long-button'
+                }}
+              >
+                &lt;MenuItem onClick={handleClose}>
+                  &lt;Facebook />
+                &lt;/MenuItem>
+                &lt;MenuItem onClick={handleClose}>
+                  &lt;Twitter />
+                &lt;/MenuItem>
+                &lt;MenuItem onClick={handleClose}>
+                  &lt;Linkedin />
+                &lt;/MenuItem>
+                &lt;MenuItem onClick={handleClose}>
+                  &lt;GooglePlus />
+                &lt;/MenuItem>
+              &lt;/Menu>
+            &lt;/Box>
+          &lt;/CardActions>
+        &lt;/Grid>
+      &lt;/Grid>
+    &lt;/Card>
+  )
+}
+
+export default ProductCard
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#hexToRGBA">hexToRGBA</a></li><li><a href="global.html#Home">Home</a></li><li><a href="global.html#HomeLayout">HomeLayout</a></li><li><a href="global.html#ProductCard">ProductCard</a></li><li><a href="global.html#store">store</a></li><li><a href="global.html#userSlice">userSlice</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Sun Jul 17 2022 20:21:26 GMT-0500 (hora estándar de Colombia)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
